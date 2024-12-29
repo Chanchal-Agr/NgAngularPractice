@@ -1,0 +1,51 @@
+<p>template-form works!</p>
+<form #form="ngForm">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" #fName="ngModel" id="name" [(ngModel)]="student.name" name="name" required
+      minlength="3">
+    <div>
+      <span *ngIf="fName.touched && fName.errors?.['required']" class="warning-message">This is required</span>
+      <span *ngIf="fName.errors?.['minlength']" class="warning-message">Insert atleast 3 characters</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input type="number" class="form-control" #fAge="ngModel" id="age" required min="1" max="100"
+      [(ngModel)]="student.age" name="age">
+    <div>
+
+      <span *ngIf="fAge.touched && fAge.errors?.['required']" class="warning-message">This is required</span>
+
+      <span class="warning-message" *ngIf="fAge.errors?.['min'] || fAge.errors?.['max']">
+        Age must be between 1 and 100.
+      </span>
+
+    </div>
+  </div>
+
+  <button [disabled]="form.invalid" (click)="onSubmit()">Submit</button>
+</form>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="table-header">S.No</th>
+        <th class="table-header">Name</th>
+        <th class="table-header">Age</th>
+        <th class="table-header">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students; let i = index;">
+        <td class="table-data">{{ i + 1 }}</td>
+        <td class="table-data">{{ student.name }}</td>
+        <td class="table-data">{{ student.age }}</td>
+        <td class="table-data">
+          <button class="btn btn-secondary" (click)="edit(i)">Edit</button>
+          <button class="btn btn-danger"  (click)="delete(i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
