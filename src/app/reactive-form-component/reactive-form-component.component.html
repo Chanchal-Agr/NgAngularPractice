@@ -1,0 +1,15 @@
+<p>reactive-form-component works!</p>
+<form [formGroup]="studentForm">
+    <div> <label for="fname">First name:</label>
+        <input type="text" id="fname" formControlName="firstName">
+    </div>
+    <div>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" formControlName="lastName">>
+    </div>
+    <div>
+        <button (click)="submit()">Submit</button>
+    </div>
+   
+
+</form>
