@@ -7,13 +7,16 @@ import { NgModulePracticeComponent } from './ng-module-practice/ng-module-practi
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponentComponent } from './reactive-form-component/reactive-form-component.component';
+import { SpecificationComponent } from './specification/specification.component';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     NgModulePracticeComponent,
     TemplateFormComponent,
-    ReactiveFormComponentComponent
+    ReactiveFormComponentComponent,
+    SpecificationComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import { ReactiveFormComponentComponent } from './reactive-form-component/reacti
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+  provideHttpClient(withFetch())],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

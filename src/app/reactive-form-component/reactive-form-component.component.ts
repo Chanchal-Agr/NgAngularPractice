@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+interface formInterface {
+  firstName: FormControl<string | null>,
+  lastName: FormControl<string | null>
+}
 
 @Component({
   selector: 'app-reactive-form-component',
@@ -8,14 +13,18 @@ import { FormControl, FormGroup } from '@angular/forms';
   templateUrl: './reactive-form-component.component.html',
   styleUrl: './reactive-form-component.component.css'
 })
-export class ReactiveFormComponentComponent {
 
-  studentForm: FormGroup = new FormGroup({
-    firstName: new FormControl(),
-    lastName: new FormControl()
+export class ReactiveFormComponentComponent {
+  public studentForm: FormGroup<formInterface> = new FormGroup<formInterface>({
+    firstName: new FormControl('', [Validators.required]),
+    lastName: new FormControl('', Validators.required)
   })
-  formObject: any;
+
   submit() {
-    this.formObject = this.studentForm;
+    this.studentForm.markAllAsTouched();
+    if(this.studentForm.valid){
+      const data = this.studentForm.value;
+      console.log(data)
+    }
   }
 }

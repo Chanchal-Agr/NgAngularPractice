@@ -1,15 +1,22 @@
 <p>reactive-form-component works!</p>
 <form [formGroup]="studentForm">
-    <div> <label for="fname">First name:</label>
-        <input type="text" id="fname" formControlName="firstName">
+    <div> <label>First name:</label>
+        <input type="text" formControlName="firstName">
+        <div>
+            <span *ngIf="studentForm.controls.firstName && studentForm.controls.firstName.touched && 
+            studentForm.controls.firstName.invalid" style="color: red;">required</span>
+        </div>
     </div>
     <div>
-        <label for="lname">Last name:</label>
-        <input type="text" id="lname" formControlName="lastName">>
+        <label>Last name:</label>
+        <input type="text" formControlName="lastName">>
+        <div>
+            <span *ngIf="studentForm.controls.lastName && studentForm.controls.lastName.touched && 
+            studentForm.controls.lastName.invalid"
+             style="color: red;">required</span>
+        </div>
     </div>
     <div>
         <button (click)="submit()">Submit</button>
     </div>
-   
-
 </form>

@@ -12,7 +12,6 @@ export class TemplateFormComponent {
   student: { age: number; name: string } = {
     age: 0,
     name: ''
-
   }
 
   students: { age: number; name: string }[] = [];

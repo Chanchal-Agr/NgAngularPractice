@@ -1,0 +1,38 @@
+<p>Specification works!</p>
+<form [formGroup]="specificationForm">
+    <div>
+        <label>Name:</label>
+        <input type="text" formControlName="name">
+        <div *ngIf="specificationForm.controls.name && specificationForm.controls.name.touched && 
+            specificationForm.controls.name.invalid">
+            <span *ngIf="specificationForm.controls.name.hasError('required')" style="color: red;">required</span>
+            <span *ngIf="specificationForm.controls.name.hasError('minlength')" style="color: red;">Enter atleast 3 characters</span>
+        </div>
+    </div>
+    <div>
+        <button [disabled]="specificationForm.invalid" (click)="submit()">Submit</button>
+    </div>
+</form>
+
+<h3>List of specifications</h3>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="table-header">S.No</th>
+                <th class="table-header">Name</th>
+                <th class="table-header">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let specification of specificationList; let i = index;">
+                <td class="table-data">{{ i + 1 }}</td>
+                <td class="table-data">{{ specification.name }}</td>
+                <td class="table-data">
+                    <button class="btn btn-secondary">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
