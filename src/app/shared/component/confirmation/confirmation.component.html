@@ -1,0 +1,10 @@
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">{{modalContent?.heading}}</h5>
+</div>
+<div class="modal-body">
+  <p style="margin-bottom: 20px;">{{modalContent?.message}}</p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default"(click)="decline()">{{modalContent?.declineButton}}</button>
+  <button type="button" class="btn btn-primary" (click)="confirm()">{{modalContent?.confirmButton}}</button>
+</div>

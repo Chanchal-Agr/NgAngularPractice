@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {  NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +9,8 @@ import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponentComponent } from './reactive-form-component/reactive-form-component.component';
 import { SpecificationComponent } from './specification/specification.component';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
+import { ConfirmationComponent } from './shared/component/confirmation/confirmation.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/
     NgModulePracticeComponent,
     TemplateFormComponent,
     ReactiveFormComponentComponent,
-    SpecificationComponent
+    SpecificationComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalModule.forRoot()
   ],
   providers: [
   provideHttpClient(withFetch())],

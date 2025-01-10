@@ -1,5 +1,5 @@
 <p>reactive-form-component works!</p>
-<form [formGroup]="studentForm">
+<form [formGroup]="studentForm" onsubmit="submit()">
     <div> <label>First name:</label>
         <input type="text" formControlName="firstName">
         <div>
@@ -9,7 +9,7 @@
     </div>
     <div>
         <label>Last name:</label>
-        <input type="text" formControlName="lastName">>
+        <input type="text" formControlName="lastName">
         <div>
             <span *ngIf="studentForm.controls.lastName && studentForm.controls.lastName.touched && 
             studentForm.controls.lastName.invalid"

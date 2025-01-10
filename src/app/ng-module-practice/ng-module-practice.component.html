@@ -1,16 +1,16 @@
 <p>ng-module-practice works!</p>
 <div class="container">
     <div class="form-group">
-        <input type="text" class="input-text" [(ngModel)]="name"  />
+        <input type="text" class="input-text" [(ngModel)]="name" />
         <button class="btn btn-primary" (click)="submit()">Submit</button>
     </div>
 
-    <table class="table">
+    <table class="table table-demo">
         <thead>
             <tr>
-                <th class="table-header">S.No</th>
-                <th class="table-header">Name</th>
-                <th class="table-header">Action</th>
+                <th class="table-header" [width]="20">S.No</th>
+                <th class="table-header" [width]="50">Name</th>
+                <th class="table-header" [width]="30">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -18,7 +18,7 @@
                 <td class="table-data">{{ i + 1 }}</td>
                 <td class="table-data">{{ name }}</td>
                 <td class="table-data">
-                    <button class="btn btn-secondary" (click)="editName(name, i)">Edit</button>
+                    <button class="btn btn-secondary" (click)="editName(i)">Edit</button>
                     <button class="btn btn-danger" (click)="deleteName(i)">Delete</button>
                 </td>
             </tr>
@@ -26,4 +26,15 @@
     </table>
 </div>
 
-  
+
+<!-- <ng-container *ngIf="isModalOpen">
+    <app-confirmation [message]="message" (newItemEvent)="getResponseToDelete($event)"></app-confirmation>
+</ng-container> -->
+
+<ng-template #template>
+    <app-confirmation [modalContent]="modalContent" (newItemEvent)="getResponseToDelete($event)"></app-confirmation>
+    <!-- <app-confirmation [msg]="'modalContent'" (newItemEvent)="getResponseToDelete($event)"></app-confirmation> -->
+</ng-template>
+
+
+

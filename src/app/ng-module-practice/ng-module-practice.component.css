@@ -116,3 +116,6 @@ tr:hover {
         align-items: stretch;
     }
 }
+.table-demo tbody tr td{
+    word-break: break-all;
+}
