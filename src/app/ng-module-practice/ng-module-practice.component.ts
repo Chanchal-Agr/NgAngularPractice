@@ -1,4 +1,4 @@
-import { Component, TemplateRef, ViewChild } from '@angular/core';
+import { Component, SimpleChanges, TemplateRef, ViewChild } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { ModalContent } from '../shared/component/confirmation/request/modal-content.request';
 
@@ -24,6 +24,7 @@ export class NgModulePracticeComponent {
 
   constructor(
     private modalService: BsModalService
+    
   ) {
   }
 
@@ -61,5 +62,5 @@ export class NgModulePracticeComponent {
     this.modalService.hide();
 
   }
-
+ 
 }
