@@ -1,6 +1,6 @@
 import { Component, SimpleChanges, TemplateRef, ViewChild } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
-import { ModalContent } from '../shared/component/confirmation/request/modal-content.request';
+import { ModalContent } from '../../shared/interface/request/modal-content.request';
 
 @Component({
   selector: 'app-ng-module-practice',

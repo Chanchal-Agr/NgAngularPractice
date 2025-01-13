@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { SpecificationForm, SpecificationList } from '../model/response/specification.model';
+import { SpecificationForm, SpecificationList } from '../shared/model/specification.model';
 import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { SpecificationFilter } from '../model/request/specificationPayload.model';
-import { Response } from '../../shared/response/generic.model';
+import { SpecificationFilter } from '../shared/model/specificationPayload.model';
+import { Response } from '../shared/interface/response/generic.model';
 
 @Injectable({
   providedIn: 'root'

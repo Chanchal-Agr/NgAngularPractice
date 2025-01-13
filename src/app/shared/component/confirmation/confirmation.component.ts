@@ -1,6 +1,6 @@
 import { Component,TemplateRef, Input,Output,EventEmitter } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { ModalContent } from './request/modal-content.request';
+import { ModalContent } from '../../interface/request/modal-content.request';
 
 
 

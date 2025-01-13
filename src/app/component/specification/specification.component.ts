@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { SpecificationForm, SpecificationList } from '../model/response/specification.model';
-import { SpecificationService } from '../service/specification.service';
-import { SpecificationFilter } from '../model/request/specificationPayload.model';
+import { SpecificationForm, SpecificationList } from '../../shared/model/specification.model';
+import { SpecificationService } from '../../service/specification.service';
+import { SpecificationFilter } from '../../shared/model/specificationPayload.model';
 
 @Component({
   selector: 'app-specification',

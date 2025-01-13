@@ -1,4 +1,4 @@
-import { SortOrder } from "../../enum/sort-order.enum";
+import { SortOrder } from "../enum/sort-order.enum";
 
 export interface SpecificationFilter {
     isPaginate: boolean,
