@@ -9,7 +9,6 @@ interface formInterface {
 @Component({
   selector: 'app-reactive-form-component',
   standalone: false,
-
   templateUrl: './reactive-form-component.component.html',
   styleUrl: './reactive-form-component.component.css'
 })
